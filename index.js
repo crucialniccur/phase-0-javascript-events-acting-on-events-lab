@@ -65,3 +65,11 @@ document.addEventListener("keydown", function (e) {
     moveDodgerLeft();
   }
 });
+
+// movedodgerRight
+function moveDodgerRight() {
+  const rightNumbers = dodger.style.right.replace("px", "");
+  console.log(rightNumbers);
+}
+
+moveDodgerRight();

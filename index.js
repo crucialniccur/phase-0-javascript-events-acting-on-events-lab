@@ -50,11 +50,9 @@
 
 const dodger = document.getElementById("dodger");
 console.log(dodger);
-
 function moveDodgerLeft() {
   const leftNumbers = dodger.style.left.replace("px", "");
   const left = parseInt(leftNumbers, 10);
-
   if (left > 0) {
     dodger.style.left = `${left - 1}px`;
   }
@@ -68,8 +66,21 @@ document.addEventListener("keydown", function (e) {
 
 // movedodgerRight
 function moveDodgerRight() {
-  const rightNumbers = dodger.style.right.replace("px", "");
-  console.log(rightNumbers);
+  //   console.log(dodger);
+  const leftNumbers = dodger.style.left.replace("px", "");
+  //   console.log(leftNumbers);
+  const left = parseInt(leftNumbers, 10);
+  //   console.log(left);
+
+  if (left < 360) {
+    dodger.style.left = `${left + 1}px`;
+  }
 }
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowRight") {
+    moveDodgerRight();
+  }
+});
 
 moveDodgerRight();
